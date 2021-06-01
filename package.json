@@ -1,0 +1,61 @@
+{
+  "name": "kfc-bdd-tests",
+  "version": "1.0.0",
+  "description": "KFC BDD Tests",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open:local": "CYPRESS_ENV=localhost npm run cypress:open",
+    "cypress:open": "cypress open",
+    "test:local": "CYPRESS_ENV=localhost npm run test",
+    "test": "cypress run --env TAGS='@regression' --spec 'cypress/integration/**/*.feature'",
+    "test:debug:local": "CYPRESS_ENV=localhost npm run test:debug",
+    "test:debug": "cypress run --headed --browser chrome --env TAGS='@regression' --spec 'cypress/integration/**/*.feature'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "kfc-bdd-tests"
+  },
+  "author": "D Patel",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^15.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "cypress": "^7.3.0",
+    "cypress-cucumber-preprocessor": "^2.1.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^1.6.2",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.11.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^11.0.0",
+    "junit": "1.4.9",
+    "mochawesome": "6.2.2",
+    "mochawesome-merge": "4.2.0",
+    "mochawesome-report-generator": "5.2.0",
+    "prettier": "2.3.0",
+    "typescript": "^4.2.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.0"
+  }
+}
