@@ -3,7 +3,7 @@ KFC BDD Tests
 
 Prerequisite: Node.js 12 or 14 and above
 
-cd lpg-bdd-tests
+cd kfc-bdd-tests
 
 npm install cypress —save-dev
 
