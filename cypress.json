@@ -1,0 +1,9 @@
+{
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "test-results/test-output-[hash].xml"
+  },
+  "testFiles": "**/*.feature",
+  "baseUrl": "https://kfc.co.uk",
+  "chromeWebSecurity": false
+}
